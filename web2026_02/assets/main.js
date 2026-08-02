@@ -18,6 +18,27 @@ document.documentElement.classList.add('js');
   function next(){ go(idx + 1); }
   function restart(){ clearInterval(timer); timer = setInterval(next, 6000); }
   dots.forEach((d,i)=>d.addEventListener('click', ()=>{ go(i); restart(); }));
+
+  const hero = document.getElementById('hero-slider');
+  let touchX = 0, touchY = 0, swiping = false;
+  hero.addEventListener('touchstart', (e)=>{
+    touchX = e.touches[0].clientX; touchY = e.touches[0].clientY; swiping = true;
+  }, { passive:true });
+  hero.addEventListener('touchmove', (e)=>{
+    if (!swiping) return;
+    const dx = e.touches[0].clientX - touchX, dy = e.touches[0].clientY - touchY;
+    if (Math.abs(dx) > Math.abs(dy)) e.preventDefault();
+  }, { passive:false });
+  hero.addEventListener('touchend', (e)=>{
+    if (!swiping) return;
+    swiping = false;
+    const dx = e.changedTouches[0].clientX - touchX, dy = e.changedTouches[0].clientY - touchY;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+      go(idx + (dx < 0 ? 1 : -1));
+      restart();
+    }
+  });
+
   restart();
 })();
 const reveals = [...document.querySelectorAll('.reveal')];
