@@ -88,7 +88,7 @@ h1,h2,h3{ line-height:1.06; letter-spacing:-.02em; font-weight:600; }
 .btn{
   display:inline-flex; align-items:center; gap:10px;
   font-family:var(--sans); font-size:15px; font-weight:600;
-  padding:14px 22px; border-radius:999px; border:1.5px solid transparent;
+  padding:14px 22px; border-radius:15px; border:1.5px solid transparent;
   cursor:pointer; transition:.25s var(--ease);
   white-space:nowrap;
 }
@@ -134,6 +134,8 @@ h1,h2,h3{ line-height:1.06; letter-spacing:-.02em; font-weight:600; }
   padding:9px 14px; border-radius:8px; transition:.2s;
 }
 .nav-links a:hover{ color:var(--fg); background:var(--paper-2); }
+.nav-links a.btn-primary{ color:#fff; }
+.nav-links a.btn-primary:hover{ color:var(--muted); }
 .nav-cta{ margin-left:8px; }
 .nav-burger{ display:none; }
 
