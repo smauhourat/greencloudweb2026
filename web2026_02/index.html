@@ -31,27 +31,61 @@
 <main id="top">
 
 <!-- ============================= HERO ============================= -->
-<section class="hero" style="padding-block:0">
-  <div class="wrap hero-in">
-    <div class="hero-copy reveal">
+<section class="hero" id="hero-slider">
+  <div class="hero-slide active">
+    <image-slot id="hero-field" shape="rect" src="assets/hero-slide-1.webp" placeholder="Foto full-bleed: planta / campo / obra (paisaje, alto contraste)"></image-slot>
+    <div class="wrap hero-slide-copy">
       <span class="eyebrow">Consultoría ambiental</span>
       <h1>El cumplimiento ambiental también se gestiona. <em>No solo se declara.</em></h1>
       <p class="lead">Acompañamos a industrias, constructoras y empresas de servicios en todo lo que implica operar dentro del marco legal ambiental argentino: desde la habilitación inicial hasta la gestión continua de residuos, efluentes y emisiones.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#contacto">Consultar mi situación ambiental <span class="arr" aria-hidden="true">→</span></a>
-        <a class="btn btn-ghost" href="#servicios">Ver todos los servicios</a>
+        <a class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.4)" href="#servicios">Ver todos los servicios</a>
       </div>
     </div>
-    <div class="hero-media reveal">
-      <div class="hero-frame">
-        <image-slot id="hero-field" class="hero-photo" shape="rounded" radius="14" placeholder="Planta / efluentes / campo (vertical)"></image-slot>
-        <span class="hero-tag">Marco legal · AR</span>
-        <div class="data-card">
-          <span class="lbl">Normativa base</span>
-          <div class="chips on-ink" style="--teal-bright:#1ED3AE"><span class="chip" style="background:rgba(30,211,174,.12);border-color:rgba(30,211,174,.24);color:#1ED3AE">LEY 24.051</span><span class="chip" style="background:rgba(30,211,174,.12);border-color:rgba(30,211,174,.24);color:#1ED3AE">25.675</span><span class="chip" style="background:rgba(30,211,174,.12);border-color:rgba(30,211,174,.24);color:#1ED3AE">25.688</span></div>
-        </div>
+  </div>
+  <div class="hero-slide">
+    <image-slot id="hero-slide-2" shape="rect" src="assets/hero-slide-2.webp" placeholder="Foto: sitio contaminado / muestreo de suelo"></image-slot>
+    <div class="wrap hero-slide-copy">
+      <span class="eyebrow">Gestión de sitios contaminados</span>
+      <h1>Suelo y napa, <em>bajo control real.</em></h1>
+      <p class="lead">Investigación ambiental de sitio, muestreo de suelo y agua subterránea, modelos conceptuales y planes de remediación.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#contacto">Consultar mi situación ambiental <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.4)" href="#servicios">Ver todos los servicios</a>
       </div>
     </div>
+  </div>
+  <div class="hero-slide">
+    <image-slot id="hero-slide-3" shape="rect" src="assets/hero-slide-3.webp" placeholder="Foto: gestión de residuos / planta industrial"></image-slot>
+    <div class="wrap hero-slide-copy">
+      <span class="eyebrow">Gestión integral de residuos</span>
+      <h1>Trazabilidad completa, <em>de origen a disposición.</em></h1>
+      <p class="lead">Diagnóstico y caracterización, planes de minimización y economía circular, y gestión de residuos peligrosos con trazabilidad.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#contacto">Consultar mi situación ambiental <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.4)" href="#servicios">Ver todos los servicios</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-slide">
+    <image-slot id="hero-slide-4" shape="rect" src="assets/hero-slide-4.webp" placeholder="Foto: campo / energía / cambio climático"></image-slot>
+    <div class="wrap hero-slide-copy">
+      <span class="eyebrow">Cambio climático y ESG</span>
+      <h1>Medí tu huella. <em>Gestioná tu impacto.</em></h1>
+      <p class="lead">Huella de carbono, proyectos de bonos de carbono y biodiversidad, huella hídrica, inventarios GEI y reportes de sostenibilidad.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#contacto">Consultar mi situación ambiental <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.4)" href="#servicios">Ver todos los servicios</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll wrap"><span class="ln"></span>Scroll</div>
+  <div class="hero-dots" role="tablist" aria-label="Slides del hero">
+    <button class="on" aria-label="Slide 1"></button>
+    <button aria-label="Slide 2"></button>
+    <button aria-label="Slide 3"></button>
+    <button aria-label="Slide 4"></button>
   </div>
 </section>
 
