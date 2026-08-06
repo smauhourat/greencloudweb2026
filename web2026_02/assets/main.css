@@ -469,6 +469,60 @@ image-slot{ color:var(--teal-deep); }
 }
 
 /* ============================================================
+   SUBPÁGINAS DE SERVICIO — detalle (EIA, Residuos, etc.)
+   ============================================================ */
+.sub{ padding-block:clamp(48px,6vw,84px) clamp(84px,9vw,148px); }
+
+.crumb{ display:flex; flex-wrap:wrap; align-items:center; gap:8px; font-size:13.5px; color:var(--muted); margin-bottom:clamp(32px,4vw,48px); }
+.crumb a{ color:var(--muted); transition:color .2s var(--ease); }
+.crumb a:hover{ color:var(--teal-deep); }
+.crumb .sep{ color:var(--line-2); }
+.crumb .here{ color:var(--fg); font-weight:500; }
+
+.sub-layout{ display:grid; grid-template-columns:1fr 340px; gap:clamp(40px,5vw,72px); align-items:start; }
+.sub-aside{ position:sticky; top:110px; }
+
+.sub-hero{ margin-bottom:clamp(48px,5vw,64px); }
+.sub-hero .badge{ display:inline-flex; font-family:var(--mono); font-size:11.5px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--teal-deep); background:var(--teal-tint); border:1px solid #CDE9E2; padding:6px 12px; border-radius:999px; margin-bottom:18px; }
+.sub-hero h1{ font-size:clamp(30px,4vw,44px); font-weight:600; letter-spacing:-.025em; margin-bottom:18px; text-wrap:balance; }
+.sub-hero .lead{ max-width:60ch; }
+
+.sub-main .block{ margin-bottom:clamp(48px,5vw,64px); }
+.sub-main .block:last-child{ margin-bottom:0; }
+.block-h{ font-size:clamp(21px,2.2vw,26px); font-weight:600; letter-spacing:-.015em; margin-bottom:22px; }
+.statement{ background:var(--paper-2); border:1px solid var(--line); border-radius:var(--radius); padding:clamp(24px,3vw,36px); }
+
+.trig-list, .check-list{ list-style:none; display:flex; flex-direction:column; gap:14px; }
+.trig-list li, .check-list li{ display:flex; align-items:flex-start; gap:12px; font-size:15.5px; color:var(--fg); line-height:1.55; }
+.trig-list .mk, .check-list .ico{ flex:none; width:22px; height:22px; border-radius:6px; display:grid; place-items:center; margin-top:1px; }
+.trig-list .mk{ background:var(--teal-tint); color:var(--teal-deep); border:1px solid #CDE9E2; }
+.trig-list .mk svg{ width:13px; height:13px; }
+.check-list .ico{ background:var(--teal); color:#fff; }
+.check-list .ico svg{ width:11px; height:11px; }
+
+.steps{ display:grid; gap:28px; }
+.step{ display:flex; gap:20px; }
+.step-n{ flex:none; width:38px; height:38px; border-radius:11px; display:grid; place-items:center; background:var(--teal-tint); color:var(--teal-deep); border:1px solid #CDE9E2; font-family:var(--mono); font-weight:600; font-size:15px; }
+.step-body h3{ font-size:17px; font-weight:600; letter-spacing:-.01em; margin-bottom:6px; }
+.step-body p{ font-size:14.5px; color:var(--muted); line-height:1.6; }
+
+.related h2{ font-size:19px; font-weight:600; letter-spacing:-.01em; margin-bottom:20px; }
+.related-grid{ display:flex; flex-direction:column; gap:2px; }
+.related-grid .rel{ display:flex; align-items:center; justify-content:space-between; gap:14px; padding:16px 4px; border-bottom:1px solid var(--line); font-size:15px; font-weight:500; color:var(--fg); transition:color .2s var(--ease); }
+.related-grid .rel:hover{ color:var(--teal-deep); }
+.related-grid .rel .arr{ transition:transform .25s var(--ease); flex:none; }
+.related-grid .rel:hover .arr{ transform:translateX(4px); }
+
+.cta-box{ background:var(--ink); border-radius:var(--radius); padding:clamp(28px,3vw,34px); }
+.cta-box h3{ color:#fff; font-size:19px; font-weight:600; letter-spacing:-.01em; margin-bottom:20px; }
+.cta-box-actions{ display:flex; flex-direction:column; gap:10px; }
+.cta-box .btn{ justify-content:center; width:100%; }
+.cta-box .btn-ghost{ color:#fff; border-color:rgba(255,255,255,.28); }
+.cta-box .btn-ghost:hover{ border-color:var(--teal-bright); color:var(--teal-bright); }
+.cta-box .btn-ghost svg{ width:18px; height:18px; }
+.cta-note{ margin-top:16px; font-size:13px; color:#A9BAB7; text-align:center; }
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width:1080px){
@@ -484,6 +538,8 @@ image-slot{ color:var(--teal-deep); }
   .sect-grid{ grid-template-columns:repeat(2,1fr); }
   .foot-top{ grid-template-columns:1fr 1fr; gap:32px; }
   .hys-list{ grid-template-columns:1fr; }
+  .sub-layout{ grid-template-columns:1fr; }
+  .sub-aside{ position:static; }
   .nav-burger{ display:inline-flex; }
   .nav-links{
     display:none;
