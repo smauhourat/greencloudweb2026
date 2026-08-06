@@ -441,12 +441,12 @@ image-slot{ color:var(--teal-deep); }
 .svc-solid .chip{ background:rgba(255,255,255,.16); border-color:rgba(255,255,255,.3); color:#fff; }
 
 /* Variante oscura (cards 4, 8) */
-.svc-dark{ background:var(--ink-3); border-color:#2A4A4E; border-top-color:var(--teal-bright); }
+.svc-dark{ background:#2E4F54; border-color:#3A5A5E; border-top-color:var(--teal-bright); }
 .svc-dark::before{ background:var(--teal-bright); }
 .svc-dark h3{ color:#fff; }
 .svc-dark p{ color:#A9BAB7; }
 .svc-dark .svc-ico{ background:rgba(30,211,174,.12); color:var(--teal-bright); border-color:rgba(30,211,174,.3); }
-.svc-dark:hover{ border-color:#3A5A5E; }
+.svc-dark:hover{ border-color:#4A6C70; }
 .svc-dark:hover .svc-ico{ background:var(--teal-bright); color:var(--ink-3); border-color:var(--teal-bright); }
 .svc-dark .chip{ background:rgba(30,211,174,.12); border-color:rgba(30,211,174,.24); color:var(--teal-bright); }
 
