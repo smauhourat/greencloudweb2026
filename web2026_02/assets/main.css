@@ -6,6 +6,7 @@
 :root{
   /* Brand */
   --teal:        #08A78C;   /* primary, modernizado */
+  --teal-mid:    #08A78C;
   --teal-deep:   #067A66;   /* hover / texto sobre claro */
   --teal-bright: #1ED3AE;   /* acento sobre ink */
   --teal-tint:   #E7F5F1;   /* fondos suaves */
@@ -428,13 +429,13 @@ image-slot{ color:var(--teal-deep); }
 .svc-env:hover{ box-shadow:0 28px 56px -24px rgba(8,167,140,.4); }
 
 /* Variante sólida (cards 2, 6) */
-.svc-solid{ background:var(--teal); border-color:var(--teal); }
+.svc-solid{ background:var(--teal-mid); border-color:var(--teal-mid); }
 .svc-solid h3{ color:#fff; }
 .svc-solid p{ color:rgba(255,255,255,.88); }
 .svc-solid .svc-num{ color:rgba(255,255,255,.7); }
 .svc-solid .svc-ico{ background:rgba(255,255,255,.18); color:#fff; border-color:rgba(255,255,255,.28); }
 .svc-solid:hover{ border-color:rgba(255,255,255,.4); }
-.svc-solid:hover .svc-ico{ background:#fff; color:var(--teal); border-color:#fff; }
+.svc-solid:hover .svc-ico{ background:#fff; color:var(--teal-mid); border-color:#fff; }
 .svc-solid .chip{ background:rgba(255,255,255,.16); border-color:rgba(255,255,255,.3); color:#fff; }
 
 /* Variante oscura (cards 4, 8) */
