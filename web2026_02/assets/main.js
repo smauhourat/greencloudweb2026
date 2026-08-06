@@ -3,10 +3,26 @@ const nav = document.getElementById('nav');
 const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
 onScroll(); window.addEventListener('scroll', onScroll, { passive:true });
 
+// Mobile nav burger
+const navBurger = document.getElementById('nav-burger');
+const navLinks = document.getElementById('nav-links');
+if (navBurger && navLinks) {
+  navBurger.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navBurger.setAttribute('aria-expanded', String(open));
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navBurger.setAttribute('aria-expanded', 'false');
+  }));
+}
+
 // Reveal on scroll — gated on html.js so content is never trapped invisible
 // if JS fails. A timeout fallback reveals everything in case IO misses.
 document.documentElement.classList.add('js');
 (function(){
+  const hero = document.getElementById('hero-slider');
+  if (!hero) return;
   const slides = [...document.querySelectorAll('#hero-slider .hero-slide')];
   const dots = [...document.querySelectorAll('#hero-slider .hero-dots button')];
   let idx = 0, timer;
@@ -19,7 +35,6 @@ document.documentElement.classList.add('js');
   function restart(){ clearInterval(timer); timer = setInterval(next, 6000); }
   dots.forEach((d,i)=>d.addEventListener('click', ()=>{ go(i); restart(); }));
 
-  const hero = document.getElementById('hero-slider');
   let touchX = 0, touchY = 0, swiping = false;
   hero.addEventListener('touchstart', (e)=>{
     touchX = e.touches[0].clientX; touchY = e.touches[0].clientY; swiping = true;

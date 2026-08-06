@@ -137,7 +137,16 @@ h1,h2,h3{ line-height:1.06; letter-spacing:-.02em; font-weight:600; }
 .nav-links a.btn-primary{ color:#fff; }
 .nav-links a.btn-primary:hover{ color:var(--muted); }
 .nav-cta{ margin-left:8px; }
-.nav-burger{ display:none; }
+.nav-burger{
+  display:none; align-items:center; justify-content:center;
+  width:40px; height:40px; padding:0; border:none; border-radius:8px;
+  background:transparent; color:var(--fg); cursor:pointer;
+}
+.nav-burger:hover{ background:var(--paper-2); }
+.nav-burger svg{ width:22px; height:22px; }
+.nav-burger .ico-close{ display:none; }
+.nav-burger[aria-expanded="true"] .ico-menu{ display:none; }
+.nav-burger[aria-expanded="true"] .ico-close{ display:block; }
 
 /* ============================================================
    HERO — full-bleed imagen de fondo
@@ -445,6 +454,21 @@ image-slot{ color:var(--teal-deep); }
 .svc-hys .svc-ico{ background:var(--paper); }
 
 /* ============================================================
+   SEGURIDAD E HIGIENE — listado de servicios (páginas internas)
+   ============================================================ */
+.hys-list{ list-style:none; display:grid; grid-template-columns:repeat(2,1fr); gap:14px 40px; }
+.hys-list li{ position:relative; padding-left:28px; font-size:15.5px; color:var(--fg); line-height:1.55; }
+.hys-list li::before{
+  content:""; position:absolute; left:0; top:5px; width:15px; height:15px;
+  border-radius:5px; background:var(--teal-tint); border:1px solid #CDE9E2;
+}
+.hys-list li::after{
+  content:""; position:absolute; left:5px; top:9px; width:6px; height:3px;
+  border-left:2px solid var(--teal-deep); border-bottom:2px solid var(--teal-deep);
+  transform:rotate(-45deg);
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width:1080px){
@@ -459,7 +483,19 @@ image-slot{ color:var(--teal-deep); }
   .pillar{ padding-block:22px; }
   .sect-grid{ grid-template-columns:repeat(2,1fr); }
   .foot-top{ grid-template-columns:1fr 1fr; gap:32px; }
-  .nav-links{ display:none; }
+  .hys-list{ grid-template-columns:1fr; }
+  .nav-burger{ display:inline-flex; }
+  .nav-links{
+    display:none;
+    position:absolute; top:100%; left:0; right:0;
+    flex-direction:column; align-items:stretch; gap:2px;
+    background:var(--paper); border-bottom:1px solid var(--line);
+    box-shadow:0 12px 32px -16px rgba(12,26,27,.18);
+    padding:10px clamp(20px,5vw,64px) 18px;
+  }
+  .nav-links.open{ display:flex; }
+  .nav-links a{ padding:12px 10px; }
+  .nav-cta{ margin:10px 10px 0; justify-content:center; }
 }
 @media (max-width:640px){
   .svc-grid{ grid-template-columns:1fr; }
