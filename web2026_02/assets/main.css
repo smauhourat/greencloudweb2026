@@ -264,8 +264,10 @@ section{ padding-block:clamp(84px,9vw,148px); }
 .svc h3{ font-size:21px; font-weight:600; letter-spacing:-.015em; }
 .svc p{ font-size:14.5px; color:var(--muted); line-height:1.6; flex:1; }
 .svc-foot{ display:flex; align-items:center; justify-content:space-between; gap:14px; margin-top:6px; }
-.svc-link{ font-size:14px; font-weight:600; color:var(--teal-deep); display:inline-flex; align-items:center; gap:7px; }
+.svc-foot:not(:empty){ margin-top:14px; padding-top:16px; border-top:1px solid var(--line); }
+.svc-link{ font-size:14.5px; font-weight:700; color:var(--teal); display:inline-flex; align-items:center; gap:7px; transition:color .2s var(--ease); }
 .svc-link .arr{ transition:transform .25s var(--ease); }
+.svc:hover .svc-link{ color:var(--teal-deep); }
 .svc:hover .svc-link .arr{ transform:translateX(4px); }
 
 /* ============================================================
