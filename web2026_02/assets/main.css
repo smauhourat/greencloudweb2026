@@ -451,7 +451,7 @@ image-slot{ color:var(--teal-deep); }
 .svc-dark .chip{ background:rgba(30,211,174,.12); border-color:rgba(30,211,174,.24); color:var(--teal-bright); }
 
 .svc-block-hys .svc-block-head h3{ color:var(--muted); font-size:19px; }
-.svc-hys{ max-width:640px; background:var(--paper-2); box-shadow:none; }
+.svc-hys{ grid-column:1 / -1; background:var(--paper-2); box-shadow:none; }
 .svc-hys:hover{ transform:none; box-shadow:none; border-color:var(--line); }
 .svc-hys::before{ display:none; }
 .svc-hys .svc-ico{ background:var(--paper); }
