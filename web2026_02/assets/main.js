@@ -25,11 +25,20 @@ document.documentElement.classList.add('js');
   if (!hero) return;
   const slides = [...document.querySelectorAll('#hero-slider .hero-slide')];
   const dots = [...document.querySelectorAll('#hero-slider .hero-dots button')];
+  // Slides 2+ ship as data-src so only the LCP slide's image fetches on
+  // load; each later slide loads one dwell cycle ahead of being shown.
+  function ensureLoaded(i){
+    const el = slides[i] && slides[i].querySelector('image-slot[data-src]');
+    if (el) { el.setAttribute('src', el.getAttribute('data-src')); el.removeAttribute('data-src'); }
+  }
+  ensureLoaded(1);
   let idx = 0, timer;
   function go(n){
     slides[idx].classList.remove('active'); dots[idx].classList.remove('on');
     idx = (n + slides.length) % slides.length;
     slides[idx].classList.add('active'); dots[idx].classList.add('on');
+    ensureLoaded(idx);
+    ensureLoaded((idx + 1) % slides.length);
   }
   function next(){ go(idx + 1); }
   function restart(){ clearInterval(timer); timer = setInterval(next, 6000); }
