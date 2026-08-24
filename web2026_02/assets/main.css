@@ -35,6 +35,7 @@
   --shadow-hover: 0 1px 2px rgba(12,26,27,.05), 0 28px 56px -24px rgba(8,167,140,.28);
   --sans: "IBM Plex Sans", system-ui, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, monospace;
+  --mono-creds: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
 
   /* Eyebrow / subtitulo (tweakable) */
   --eyebrow-font: var(--sans);
@@ -185,16 +186,16 @@ h1,h2,h3{ line-height:1.06; letter-spacing:-.02em; font-weight:600; }
 .creds-track{
   display:flex; align-items:center; gap:0; width:max-content;
   padding-block:18px;
-  animation:creds-scroll 38s linear infinite;
+  animation:creds-scroll 24s linear infinite;
 }
 .creds-track span{
-  font-family:var(--mono); font-size:13px; font-weight:500; letter-spacing:.08em;
+  font-family:var(--mono-creds); font-size:13px; font-weight:500; letter-spacing:.08em;
   white-space:nowrap; padding-inline:26px; color:#EAFBF6;
 }
 .creds-track i{ width:5px; height:5px; border-radius:50%; background:rgba(255,255,255,.5); flex:none; }
 @keyframes creds-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
 @media (prefers-reduced-motion:reduce){ .creds-track{ animation:none; } }
-.creds:hover .creds-track{ animation-play-state:paused; }
+/* .creds:hover .creds-track{ animation-play-state:paused; }  <- pausaba la banda al pasar el cursor */
 
 /* ============================================================
    GENERIC SECTION
