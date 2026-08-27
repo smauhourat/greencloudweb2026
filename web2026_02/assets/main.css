@@ -37,6 +37,53 @@
   --mono: "IBM Plex Mono", ui-monospace, monospace;
   --mono-creds: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
 
+  /* Credenciales / franja marquee (tweakable) --------------------------------
+     Cambiar SOLO este bloque para probar otra tipografia en la banda CREDENCIALES.
+     Opcion A (activa) = JetBrains Mono. Las demas estan abajo comentadas.       */
+  /* 
+  --creds-font:     var(--mono-creds);
+  --creds-size:     13px;
+  --creds-weight:   500;
+  --creds-tracking: .08em;
+  --creds-case:     none; 
+  */
+
+  --creds-font:var(--sans); /*"Space Grotesk",*/
+  --creds-size:12px;
+  --creds-weight:500; 
+  --creds-tracking:.10em; 
+  --creds-case:uppercase;
+}
+
+/* ---- OPCIONES DE TIPOGRAFIA PARA .creds ------------------------------------
+   Descomentar UNO de los bloques y comentar los valores de arriba.
+
+   B) IBM Plex Mono 600 - mismo sistema tipografico, mas solido. (ya cargada)
+   :root{ --creds-font:"IBM Plex Mono",ui-monospace,monospace; --creds-size:13px;
+          --creds-weight:600; --creds-tracking:.06em; --creds-case:none; }
+
+   C) IBM Plex Sans 600 tracking amplio - etiqueta corporativa, menos "codigo". (ya cargada)
+   :root{ --creds-font:var(--sans); --creds-size:12.5px;
+          --creds-weight:600; --creds-tracking:.18em; --creds-case:uppercase; }
+
+   D) Space Grotesk 500 - tecnico moderno, no monoespaciada. (requiere link)
+   :root{ --creds-font:"Space Grotesk",var(--sans); --creds-size:14px;
+          --creds-weight:500; --creds-tracking:.10em; --creds-case:uppercase; }
+
+   E) Barlow Condensed 600 - industrial/condensada, entran mas items. (requiere link)
+   :root{ --creds-font:"Barlow Condensed",var(--sans); --creds-size:16px;
+          --creds-weight:600; --creds-tracking:.14em; --creds-case:uppercase; }
+
+   F) DM Mono 500 - mono geometrica, mas suave y legible que JetBrains. (requiere link)
+   :root{ --creds-font:"DM Mono",ui-monospace,monospace; --creds-size:13px;
+          --creds-weight:500; --creds-tracking:.10em; --creds-case:none; }
+
+   Para D/E/F agregar la familia al <link> de Google Fonts en index.html:
+   &family=Space+Grotesk:wght@500;600  |  &family=Barlow+Condensed:wght@500;600
+   &family=DM+Mono:wght@400;500
+--------------------------------------------------------------------------- */
+:root{
+
   /* Eyebrow / subtitulo (tweakable) */
   --eyebrow-font: var(--sans);
   --eyebrow-case: uppercase;
@@ -189,7 +236,9 @@ h1,h2,h3{ line-height:1.06; letter-spacing:-.02em; font-weight:600; }
   animation:creds-scroll 24s linear infinite;
 }
 .creds-track span{
-  font-family:var(--mono-creds); font-size:13px; font-weight:500; letter-spacing:.08em;
+  font-family:var(--creds-font); font-size:var(--creds-size);
+  font-weight:var(--creds-weight); letter-spacing:var(--creds-tracking);
+  text-transform:var(--creds-case);
   white-space:nowrap; padding-inline:26px; color:#EAFBF6;
 }
 .creds-track i{ width:5px; height:5px; border-radius:50%; background:rgba(255,255,255,.5); flex:none; }
